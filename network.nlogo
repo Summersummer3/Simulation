@@ -63,7 +63,7 @@ to boardcast-infect
 end
 
 to infect
-  set rand-num random 100
+  set rand-num random-float 100
   if not resistant?[
     if rand-num < infect-prob[
        set infected? true
@@ -74,7 +74,7 @@ end
 
 to recover
   ask nodes with [color = red][
-  set rand-num random 100
+  set rand-num random-float 100
     if rand-num < recovery-prob[
       set infected? false
       set color white
@@ -86,7 +86,7 @@ to recover
 end
 
 to be-resist
-  set rand-num random 100
+  set rand-num random-float 100
   if rand-num < resistant-prob[
     set color gray
     set resistant? true
